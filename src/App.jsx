@@ -1,20 +1,29 @@
-import React from 'react';
-import Page1 from './demo/Page1';
+import React, { Suspense, lazy } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+const HomePage = lazy(() => import("./pages/HomePage"));
+const CategoryPage = lazy(() => import("./pages/CategoryPage"));
+const CalculatorPage = lazy(() => import("./pages/CalculatorPage"));
 
 const App = () => {
   return (
-    <>
-      <header className="bg-blue-500 text-white p-4">
-        <h1>Welcome to Calclytics</h1>
-      </header>
-      <div>
-        <h2 className="text-2xl">App New</h2>
-        <h1 className="text-3xl font-bold underline">
-          Hello from conversion calc calclytics 
-        </h1>
+    <Router>
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1">
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/category/:categoryId" element={<CategoryPage />} />
+              <Route path="/:categoryId/:calculatorId" element={<CalculatorPage />} />
+            </Routes>
+          </Suspense>
+        </main>
+        <Footer />
       </div>
-      <Page1 />
-    </>
+    </Router>
   );
 };
 

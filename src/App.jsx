@@ -7,7 +7,7 @@ const App = () => {
         <h1>Welcome to Calclytics</h1>
       </header>
       <div>
-        <h2 className="text-2xl">App</h2>
+        <h2 className="text-2xl">App New</h2>
         <h1 className="text-3xl font-bold underline">
           Hello world!
         </h1>

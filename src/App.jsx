@@ -1,4 +1,5 @@
 import React from 'react';
+import Page1 from './demo/Page1';
 
 const App = () => {
   return (
@@ -9,9 +10,10 @@ const App = () => {
       <div>
         <h2 className="text-2xl">App New</h2>
         <h1 className="text-3xl font-bold underline">
-          Hello world!
+          Hello from conversion calc calclytics 
         </h1>
       </div>
+      <Page1 />
     </>
   );
 };

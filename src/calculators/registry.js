@@ -17,5 +17,17 @@ export const calculatorRegistry = {
       description: 'Calculate Compound Annual Growth Rate',
       component: () => import('./finance/CAGRCalculator'),
     },
+    'loan-payment': {
+      name: 'Loan Payment Calculator',
+      description: 'Calculate monthly loan payments and total interest paid',
+      component: () => import('./finance/LoanPaymentCalculator'),
+      schema: () => import('./finance/schemas/loanPaymentSchema'),
+    },
+    'emi': {
+      name: 'EMI Calculator',
+      description: 'Calculate monthly EMI based on loan amount, interest rate, and tenure',
+      component: () => import('./finance/EMICalculator'),
+      schema: () => import('./finance/schemas/emiSchema'),
+    },
   },
 };

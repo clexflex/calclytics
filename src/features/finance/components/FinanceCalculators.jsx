@@ -17,7 +17,11 @@ const calculators = [
     name: 'Loan Payment Calculator',
     description: 'Calculate monthly loan payments and total interest paid',
   },
-  // Add more calculators as needed
+  {
+    id: 'emi',
+    name: 'EMI Calculator',
+    description: 'Calculate monthly EMI based on loan amount, interest rate, and tenure',
+  },
 ];
 
 const FinanceCalculators = () => {
@@ -38,4 +42,4 @@ const FinanceCalculators = () => {
   );
 };
 
-export default FinanceCalculators
+export default FinanceCalculators;
